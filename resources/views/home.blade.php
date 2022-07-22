@@ -2,13 +2,13 @@
 
 @section('content')
  <!-- Page Wrapper -->
+ {{-- <span aria-hidden="true">&times;</span> --}}
 
-                <div class="alert alert-success bg-success alert-dismissible text-white text-bold m-3 mb-1 " role="alert">
+                {{-- <div class="alert alert-success bg-success alert-dismissible text-white text-bold m-3 mb-1 " role="alert">
                     <span class="text-sm">login sukses</span>
                     <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
-                    {{-- <span aria-hidden="true">&times;</span> --}}
                     </button>
-                </div>
+                </div> --}}
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
@@ -27,7 +27,7 @@
                                     <div class="col mr-2">
                                         <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                             Total Siswa</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">700</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalSiswa }}</div>
                                     </div>
                                     <div class="col-auto">
                                         <span class="material-symbols-outlined fs-1">
@@ -47,7 +47,7 @@
                                     <div class="col-md-7 ">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Total Admin</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">10</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalAdmin }}</div>
                                     </div>
                                     <div class="col-2 "  >
                                         <i class="material-symbols-outlined  fs-1"  >
@@ -65,7 +65,7 @@
                                     <div class="col-md-7 ">
                                         <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                             Jumlah Kelas</div>
-                                        <div class="h5 mb-0 font-weight-bold text-gray-800">2</div>
+                                        <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalKelas }}</div>
                                     </div>
                                     <div class="col-2 "  >
                                         <i class="material-symbols-outlined fs-1"  >
@@ -115,30 +115,33 @@
                                 <table class="table table-dark table-striped" id="dataTable" >
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Salary</th>
+                                            <th>Nama Lengkap Siswa/Siswi</th>
+                                            <th>Email</th>
+                                            <th>No Absen</th>
+                                            <th>Kelas</th>
+                                            <th>Status Kehadiran</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
-                                            <th>Age</th>
-                                            <th>Salary</th>
+                                            <th>Nama Lengkap Siswa/Siswi</th>
+                                            <th>Email</th>
+                                            <th>No Absen</th>
+                                            <th>Kelas</th>
+                                            <th>Status Kehadiran</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($students as $student)
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->email }}</td>
+                                            <td>{{ $student->absen }}</td>
                                             <td>61</td>
                                             <td>$320,800</td>
                                         </tr>
+                                        @endforeach
 
 
 

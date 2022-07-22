@@ -47,6 +47,7 @@ class User extends Authenticatable
 
     public function kelas()
     {
-        return $this->hasOne(Kelas::class);
+        return $this->belongsTo(Kelas::class);
+
     }
 }

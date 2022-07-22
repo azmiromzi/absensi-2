@@ -20,7 +20,7 @@ return new class extends Migration
             $table->boolean('is_admin')->nullable();
             $table->text('nik');
             $table->foreignId('kelas_id');
-            $table->string('absen')->nullable();
+            $table->integer('absen')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

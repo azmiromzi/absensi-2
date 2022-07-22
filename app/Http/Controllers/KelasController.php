@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Kelas;
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -12,9 +13,14 @@ class KelasController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Kelas $kelas, User $user)
     {
-        return view('kelas.index');
+        $classes = Kelas::get();
+        $totalSiswa = User::where($user->kelas_id, $kelas->id)->count();
+
+        return view('kelas.index',
+            compact(['classes', 'totalSiswa']),
+        );
     }
 
     /**
@@ -24,7 +30,7 @@ class KelasController extends Controller
      */
     public function create()
     {
-        //
+        return view('kelas.create');
     }
 
     /**
@@ -33,9 +39,16 @@ class KelasController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Kelas $kelas)
     {
-        //
+       $validateData = $request->validate([
+            'kelas' => ['required', 'min:2', 'max:10']
+        ]);
+
+        $kelas->create($validateData);
+
+        return redirect()->route('kelas.edit')->with('success', 'Account Created!');
+
     }
 
     /**
