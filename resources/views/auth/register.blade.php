@@ -59,6 +59,13 @@
                                         <input class="form-control" type="password" name="password" @error('password') is-invalid @enderror required placeholder="Password">
                                     </div>
                                 </div>
+                                <div class="form-group mb-3 row">
+                                    <div class="col-12">
+                                        <input class="form-control" type="text" name="nik" value="{{ old('nik') }}" @error('nik') is-invalid @enderror required placeholder="nik">
+                                    </div>
+                                </div>
+                                <input class="form-control" type="hidden" value="1" name="kelas_id" @error('kelas_id') is-invalid @enderror required placeholder="Nik">
+                                <input class="form-control" type="hidden" value="1" name="is_admin" @error('is_admin') is-invalid @enderror required placeholder="Nik">
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">

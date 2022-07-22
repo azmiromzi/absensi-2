@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\KelasController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -27,5 +29,8 @@ Route::middleware('auth')->group(function() {
     Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
     // Route::re('/kelas', [App\Http\Controllers\HomeController::class, 'index'])->name('kelas.index');
     Route::resource('/kelas', KelasController::class);
+    Route::resource('/siswa', UserController::class);
+    Route::resource('/admin', AdminController::class);
+
 });
 

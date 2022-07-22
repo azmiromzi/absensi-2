@@ -18,8 +18,9 @@ return new class extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->boolean('is_admin')->nullable();
-            $table->integer('nik');
+            $table->text('nik');
             $table->foreignId('kelas_id');
+            $table->string('absen')->nullable();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->rememberToken();

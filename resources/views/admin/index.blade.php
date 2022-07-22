@@ -1,7 +1,7 @@
+
 @extends('layouts.app')
 
 @section('content')
- <!-- Page Wrapper -->
 
                 <div class="alert alert-success bg-success alert-dismissible text-white text-bold m-3 mb-1 " role="alert">
                     <span class="text-sm">login sukses</span>
@@ -150,9 +150,12 @@
 
                 </div>
 
+
+
 <!-- Scroll to Top Button-->
 <a class="scroll-to-top rounded" href="#page-top">
     <i class="fas fa-angle-up"></i>
 </a>
 
 @endsection
+
