@@ -115,8 +115,8 @@
                                 <table class="table table-dark table-striped" id="dataTable" >
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
+                                            <th>Nama Admin</th>
+                                            <th>Nip</th>
                                             <th>Office</th>
                                             <th>Age</th>
                                             <th>Salary</th>
@@ -124,21 +124,24 @@
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
+                                            <th>Nama Admin</th>
+                                            <th>Nip</th>
                                             <th>Office</th>
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($admins as $admin )
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
+                                            <td>{{ $admin->name }}</td>
                                             <td>System Architect</td>
                                             <td>Edinburgh</td>
                                             <td>61</td>
                                             <td>$320,800</td>
                                         </tr>
+                                        @endforeach
 
 
 

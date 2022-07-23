@@ -47,7 +47,7 @@ class KelasController extends Controller
 
         $kelas->create($validateData);
 
-        return redirect()->route('kelas.edit')->with('success', 'Account Created!');
+        return redirect()->route('kelas.index')->with('success', 'Account Created!');
 
     }
 

@@ -115,30 +115,33 @@
                                 <table class="table table-dark table-striped" id="dataTable" >
                                     <thead>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
+                                            <th>Nama Siswa</th>
+                                            <th>Kelas</th>
+                                            <th>Nik</th>
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Name</th>
-                                            <th>Position</th>
-                                            <th>Office</th>
+                                            <th>Nama Siswa</th>
+                                            <th>Kelas</th>
+                                            <th>Nik</th>
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
+                                        @foreach ($students as $student )
+
                                         <tr>
-                                            <td>Tiger Nixon</td>
-                                            <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                            <td>{{ $student->name }}</td>
+                                            <td>{{ $student->kelas->kelas }}</td>
+                                            <td>{{ $student->nik }}</td>
                                             <td>61</td>
                                             <td>$320,800</td>
                                         </tr>
+                                        @endforeach
 
 
 

@@ -138,7 +138,7 @@
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->absen }}</td>
-                                            <td>61</td>
+                                            <td>{{ $student->kelas->kelas }}</td>
                                             <td>$320,800</td>
                                         </tr>
                                         @endforeach

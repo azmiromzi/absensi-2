@@ -29,7 +29,7 @@ class HomeController extends Controller
        $totalAdmin = User::where('is_admin', 1)->count();
        $totalKelas = Kelas::count();
     //    $totalSiswaMasuk = User::where('status_kehadiran', 'hadir')->count();
-        $students = User::get();
+        $students = User::with('kelas')->get();
         return view('home', compact(['totalSiswa', 'totalAdmin', 'totalKelas', 'students']));
     }
 }
