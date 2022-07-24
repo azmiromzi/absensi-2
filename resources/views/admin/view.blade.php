@@ -3,21 +3,21 @@
 
 @section('content')
 
-{{-- <span aria-hidden="true">&times;</span> --}}
-                {{-- <div class="alert alert-success bg-success alert-dismissible text-white text-bold m-3 mb-1 " role="alert">
+                <div class="alert alert-success bg-success alert-dismissible text-white text-bold m-3 mb-1 " role="alert">
                     <span class="text-sm">login sukses</span>
                     <button type="button" class="btn-close text-lg py-3 opacity-10" data-bs-dismiss="alert" aria-label="Close">
+                    {{-- <span aria-hidden="true">&times;</span> --}}
                     </button>
-                </div> --}}
+                </div>
 
                 <!-- Page Heading -->
                 <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                    <h1 class="h3 mb-0 text-gray-800">Kelas</h1>
+                    <h1 class="h3 mb-0 text-gray-800">Dashboard</h1>
 
                 </div>
 
                 <!-- Content Row -->
-                {{-- <div class="row">
+                <div class="row">
 
                     <!-- Earnings (Monthly) Card Example -->
                     <div class="col-xl-3 col-md-6 mb-4">
@@ -97,18 +97,14 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
+                </div>
 
                 <!-- Content Row -->
 
-                <div class="container-fluid mt-5">
+                <div class="container-fluid">
 
                     <!-- Page Heading -->
-
-                    <div class="d-flex justify-content-between mb-3">
-                        <h1 class="h3 mb-2 text-gray-800">Table Siswa</h1>
-                        <a class="btn btn-primary" href="{{ route('kelas.create') }}" role="button">Create New Class</a>
-                    </div>
+                    <h1 class="h3 mb-2 text-gray-800">Table Siswa</h1>
 
 
                     <!-- DataTales Example -->
@@ -119,41 +115,33 @@
                                 <table class="table table-dark table-striped" id="dataTable" >
                                     <thead>
                                         <tr>
-                                            <th>Nama Kelas</th>
-                                            <th>Jumlah Siswa</th>
-                                            <th>action</th>
+                                            <th>Nama Admin</th>
+                                            <th>Nip</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Salary</th>
                                         </tr>
                                     </thead>
                                     <tfoot>
                                         <tr>
-                                            <th>Nama Kelas</th>
-                                            <th>Jumlah Siswa</th>
-                                            <th>action</th>
+                                            <th>Nama Admin</th>
+                                            <th>Nip</th>
+                                            <th>Office</th>
+                                            <th>Age</th>
+                                            <th>Salary</th>
                                         </tr>
                                     </tfoot>
                                     <tbody>
-                                        @foreach ($kelass as $kelas )
+                                        {{-- @foreach ($admins as $admin ) --}}
 
                                         <tr>
-                                            <td>{{ $kelas->kelas }}</td>
-                                            <td>{{ $kelas->user->where('kelas_id', $kelas->id)->count() }}</td>
-                                            <td>
-                                                <a href="{{ route('kelas.show', $kelas->id) }}" class="btn btn-success px-2 pt-2 pb-1 mb-1">
-                                                    <span class="material-symbols-outlined ">visibility</span>
-                                                </a>
-                                                <a href="{{ route('kelas.edit', $kelas->id) }}" class="btn btn-success px-2 pt-2 pb-1 mb-1">
-                                                    <span class="material-symbols-outlined">edit</span>
-                                                </a>
-                                                <form action="{{ route('kelas.destroy', $kelas->id) }}" method="POST" class="d-inline">
-                                                    @csrf
-                                                    @method('delete')
-                                                    <button class="btn btn-danger px-2 pt-2 pb-1 mb-1" href="{{ route('logout') }}" onclick="return confirm('Apakah anda akan menghapus data ini?')">
-                                                        <span class="material-symbols-outlined">delete</span>
-                                                    </button>
-                                                </form>
-                                            </td>
+                                            <td>{{ $user->name }}</td>
+                                            <td>System Architect</td>
+                                            <td>Edinburgh</td>
+                                            <td>61</td>
+                                            <td>$320,800</td>
                                         </tr>
-                                        @endforeach
+                                        {{-- @endforeach --}}
 
 
 

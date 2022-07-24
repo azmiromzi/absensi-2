@@ -137,7 +137,9 @@
                                         <tr>
                                             <td>{{ $admin->name }}</td>
                                             <td>System Architect</td>
-                                            <td>Edinburgh</td>
+                                            <td><a href="{{ route('admin.show', $admin->id) }}" class="btn btn-success p-2 mb-1">
+                                                <span class="material-icons">visibility</span>
+                                            </a></td>
                                             <td>61</td>
                                             <td>$320,800</td>
                                         </tr>

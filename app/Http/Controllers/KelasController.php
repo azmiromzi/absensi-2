@@ -15,11 +15,11 @@ class KelasController extends Controller
      */
     public function index(Kelas $kelas, User $user)
     {
-        $classes = Kelas::get();
+        $kelass = Kelas::get();
         $totalSiswa = User::where($user->kelas_id, $kelas->id)->count();
 
         return view('kelas.index',
-            compact(['classes', 'totalSiswa']),
+            compact(['kelass', 'totalSiswa']),
         );
     }
 
@@ -57,9 +57,14 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function show(Kelas $kelas)
+    public function show(Kelas $kela, User $user )
     {
-        //
+        $users = User::where('kelas_id' , $kela->id)->get();
+        return view('kelas.view', [
+            'kelas' => $kela,
+            'users' => $users
+
+        ]);
     }
 
     /**
@@ -68,9 +73,11 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function edit(Kelas $kelas)
+    public function edit(Kelas $kela)
     {
-        //
+        return view('kelas.edit', [
+            'kelas' => $kela
+        ]);
     }
 
     /**
@@ -80,9 +87,14 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Kelas $kelas)
+    public function update(Request $request, Kelas $kela)
     {
-        //
+        $data = $request->validate([
+            'kelas' => $request->kelas
+        ]);
+
+        $kela->update($data);
+        return redirect()->route('kelas.index')->with('success', 'Account Updated!');
     }
 
     /**
@@ -91,8 +103,10 @@ class KelasController extends Controller
      * @param  \App\Models\Kelas  $kelas
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Kelas $kelas)
+    public function destroy(Kelas $kela)
     {
-        //
+        $kela->delete();
+
+        return redirect()->route('kelas.index')->with('success', 'Account Deleted!');
     }
 }

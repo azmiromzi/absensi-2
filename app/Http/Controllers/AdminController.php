@@ -47,7 +47,10 @@ class AdminController extends Controller
      */
     public function show($id)
     {
-        //
+
+        return view('admin.view', [
+            'user' => User::findOrFail($id)
+        ]);
     }
 
     /**
