@@ -104,7 +104,10 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Table Siswa</h1>
+                    <div class="d-flex justify-content-between mb-3">
+                        <h1 class="h3 mb-2 text-gray-800">Table Admin</h1>
+                        <a class="btn btn-primary" href="{{ route('admin.create') }}" role="button">Create New Admin</a>
+                    </div>
 
 
                     <!-- DataTales Example -->
@@ -117,7 +120,7 @@
                                         <tr>
                                             <th>Nama Admin</th>
                                             <th>Nip</th>
-                                            <th>Office</th>
+                                            <th>action</th>
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
@@ -126,7 +129,7 @@
                                         <tr>
                                             <th>Nama Admin</th>
                                             <th>Nip</th>
-                                            <th>Office</th>
+                                            <th>action</th>
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
@@ -137,9 +140,21 @@
                                         <tr>
                                             <td>{{ $admin->name }}</td>
                                             <td>System Architect</td>
-                                            <td><a href="{{ route('admin.show', $admin->id) }}" class="btn btn-success p-2 mb-1">
-                                                <span class="material-icons">visibility</span>
-                                            </a></td>
+                                            <td>
+                                                <a href="{{ route('admin.show', $admin->id) }}" class="btn btn-success px-2 pt-2 pb-1 mb-1">
+                                                    <span class="material-symbols-outlined">visibility</span>
+                                                </a>
+                                            <a href="{{ route('admin.edit', $admin->id) }}" class="btn btn-success px-2 pt-2 pb-1 mb-1">
+                                                <span class="material-symbols-outlined">edit</span>
+                                            </a>
+                                            <form action="{{ route('admin.destroy', $admin->id) }}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('delete')
+                                                <button class="btn btn-danger px-2 pt-2 pb-1 mb-1" href="{{ route('logout') }}" onclick="return confirm('Apakah anda akan menghapus data ini?')">
+                                                    <span class="material-symbols-outlined">delete</span>
+                                                </button>
+                                            </form>
+                                            </td>
                                             <td>61</td>
                                             <td>$320,800</td>
                                         </tr>

@@ -4,7 +4,7 @@
     <head>
 
         <meta charset="utf-8" />
-        <title>Register | Upcube - Admin & Dashboard Template</title>
+        <title>Register | Users</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="Premium Multipurpose Admin & Dashboard Template" name="description" />
         <meta content="Themesdesign" name="author" />
@@ -65,7 +65,8 @@
                                     </div>
                                 </div>
                                 <input class="form-control" type="hidden" value="1" name="kelas_id" @error('kelas_id') is-invalid @enderror required placeholder="Nik">
-                                <input class="form-control" type="hidden" value="1" name="is_admin" @error('is_admin') is-invalid @enderror required placeholder="Nik">
+                                <input class="form-control" type="hidden" value="0" name="is_admin" @error('is_admin') is-invalid @enderror required placeholder="Nik">
+                                <input class="form-control" type="hidden" value="0" name="absen" @error('absen') is-invalid @enderror required placeholder="Nik">
 
                                 <div class="form-group mb-3 row">
                                     <div class="col-12">

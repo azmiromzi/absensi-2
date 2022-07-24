@@ -90,7 +90,7 @@ class KelasController extends Controller
     public function update(Request $request, Kelas $kela)
     {
         $data = $request->validate([
-            'kelas' => $request->kelas
+            'kelas' => ['required']
         ]);
 
         $kela->update($data);

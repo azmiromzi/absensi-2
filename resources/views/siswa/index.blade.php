@@ -136,7 +136,12 @@
 
                                         <tr>
                                             <td>{{ $student->name }}</td>
+                                            @if ($student->kelas_id === 0)
+
+                                            <td>kelas tidak ada</td>
+                                            @else
                                             <td>{{ $student->kelas->kelas }}</td>
+                                            @endif
                                             <td>{{ $student->nik }}</td>
                                             <td>61</td>
                                             <td>$320,800</td>

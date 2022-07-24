@@ -138,8 +138,13 @@
                                             <td>{{ $student->name }}</td>
                                             <td>{{ $student->email }}</td>
                                             <td>{{ $student->absen }}</td>
-                                            <td>{{ $student->kelas->kelas }}</td>
                                             <td>$320,800</td>
+                                            @if ($student->kelas_id === 0)
+
+                                            <td>kelas tidak ada</td>
+                                            @else
+                                            <td>{{ $student->kelas->kelas }}</td>
+                                            @endif
                                         </tr>
                                         @endforeach
 
