@@ -116,21 +116,21 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-dark table-striped" id="dataTable" >
-                                    <thead>
+                                <table class="table border-dark  border" id="dataTable" >
+                                    <thead class="c-head-table">
                                         <tr>
                                             <th>Nama Kelas</th>
                                             <th>Jumlah Siswa</th>
                                             <th>action</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    {{-- <tfoot>
                                         <tr>
                                             <th>Nama Kelas</th>
                                             <th>Jumlah Siswa</th>
                                             <th>action</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> --}}
                                     <tbody>
                                         @foreach ($kelass as $kelas )
 

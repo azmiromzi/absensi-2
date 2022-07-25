@@ -49,7 +49,7 @@
                                             Total Admin</div>
                                         <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $totalAdmin }}</div>
                                     </div>
-                                    <div class="col-2 "  >
+                                    <div class="col-2">
                                         <i class="material-symbols-outlined  fs-1"  >
                                             group
                                             </i>
@@ -112,17 +112,17 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-dark table-striped" id="dataTable" >
-                                    <thead>
-                                        <tr>
-                                            <th>Nama Lengkap Siswa/Siswi</th>
+                                <table class="table border-dark border " id="dataTable" >
+                                    <thead class="c-head-table">
+                                        <tr class="">
+                                            <th >Nama Lengkap Siswa/Siswi</th>
                                             <th>Email</th>
                                             <th>No Absen</th>
                                             <th>Kelas</th>
-                                            <th>Status Kehadiran</th>
+                                            <th>Nik</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    {{-- <tfoot>
                                         <tr>
                                             <th>Nama Lengkap Siswa/Siswi</th>
                                             <th>Email</th>
@@ -130,21 +130,22 @@
                                             <th>Kelas</th>
                                             <th>Status Kehadiran</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> --}}
                                     <tbody>
                                         @foreach ($students as $student)
 
                                         <tr>
-                                            <td>{{ $student->name }}</td>
-                                            <td>{{ $student->email }}</td>
-                                            <td>{{ $student->absen }}</td>
-                                            <td>$320,800</td>
+                                            <td class="border border-1 border-dark">{{ $student->name }}</td>
+                                            <td class="border border-1 border-dark">{{ $student->email }}</td>
+                                            <td class="border border-1 border-dark">{{ $student->absen }}</td>
+
                                             @if ($student->kelas_id === 0)
 
-                                            <td>kelas tidak ada</td>
+                                            <td class="border border-1 border-dark">kelas tidak ada</td>
                                             @else
-                                            <td>{{ $student->kelas->kelas }}</td>
+                                            <td class="border border-1 border-dark">{{ $student->kelas->kelas }}</td>
                                             @endif
+                                            <td class="border border-1 border-dark">{{ $student->nik }}</td>
                                         </tr>
                                         @endforeach
 
