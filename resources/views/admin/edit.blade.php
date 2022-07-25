@@ -31,13 +31,13 @@
                                 <div class="row mb-3">
                                     <label for="password" class="col-sm-2 col-form-label">Password</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="password" name="password" value="{{ $admin->password }}" name="password"  id="password">
+                                        <input class="form-control" type="password" name="password"  name="password"  id="password">
                                     </div>
                                 </div>
                                 <div class="row mb-3">
                                     <label for="password_confirmation" class="col-sm-2 col-form-label">Password confirmation</label>
                                     <div class="col-sm-10">
-                                        <input class="form-control" type="password" name="password_confirmation" value="{{ $admin->password }}"  name="password_confirmation" id="password_confirmation" autocomplete="new-password" required>
+                                        <input class="form-control" type="password" name="password_confirmation"   name="password_confirmation" id="password_confirmation" autocomplete="new-password" required>
                                     </div>
                                 </div>
                                 <button class="btn btn-primary w-100" type="submit">Edit Your Profile</button>
