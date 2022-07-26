@@ -30,6 +30,7 @@
     <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
      <!-- Custom styles for this page -->
      <link href="{{ asset('frontend1/vendor/datatables/dataTables.bootstrap4.min.css') }}" rel="stylesheet">
+     <link rel="stylesheet" href="{{ asset('css/mystyle.css') }}">
 </head>
 
 <body id="page-top">

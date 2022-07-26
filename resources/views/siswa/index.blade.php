@@ -104,17 +104,17 @@
 
                         <div class="card-body">
                             <div class="table-responsive">
-                                <table class="table table-dark table-striped" id="dataTable" >
-                                    <thead>
+                                <table class="table border-dark  border" id="dataTable" >
+                                    <thead class="c-head-table">
                                         <tr>
                                             <th>Nama Siswa</th>
                                             <th>Kelas</th>
+                                            <th>No Absen</th>
+                                            <th>Kelas</th>
                                             <th>Nik</th>
-                                            <th>Age</th>
-                                            <th>Salary</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
+                                    {{-- <tfoot>
                                         <tr>
                                             <th>Nama Siswa</th>
                                             <th>Kelas</th>
@@ -122,7 +122,7 @@
                                             <th>Age</th>
                                             <th>Salary</th>
                                         </tr>
-                                    </tfoot>
+                                    </tfoot> --}}
                                     <tbody>
                                         @foreach ($students as $student )
 
@@ -134,9 +134,9 @@
                                             @else
                                             <td>{{ $student->kelas->kelas }}</td>
                                             @endif
-                                            <td>{{ $student->nik }}</td>
                                             <td>61</td>
                                             <td>$320,800</td>
+                                            <td>{{ $student->nik }}</td>
                                         </tr>
                                         @endforeach
 
